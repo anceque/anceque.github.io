@@ -1,0 +1,27 @@
+{
+  "name": "anceque",
+  "private": true,
+  "version": "0.0.1",
+  "description": "personal portfolio",
+  "repository": "git@github.com:anceque/anceque.github.io.git",
+  "author": "Anna Lulakova <anceque@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build-task:scss-compile": "node-sass-chokidar --source-map true src/scss/ -o dist/css",
+    "build-task:autoprefixer": "postcss dist/css/*.css --use autoprefixer -d dist/css",
+    "scss:build": "concurrently yarn:build-task:*",
+    "scss:watch": "chokidar 'src/scss/**/*.scss' -c 'yarn run scss:build'",
+    "start": "concurrently yarn:scss:*"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^8.2.2",
+    "node-sass-chokidar": "^2.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^11.0.0"
+  },
+  "dependencies": {
+    "rfs": "^10.0.0"
+  }
+}

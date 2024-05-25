@@ -1,0 +1,82 @@
+@import './_variables';
+@import './_mixins';
+@import './section';
+@import './item';
+@import './hero';
+@import '../../node_modules/rfs/scss';
+
+html {
+	box-sizing: border-box;
+	font-size: 10px;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	background-color: $color-white;
+	color: $color-dark;
+	font-family: $font-family-base;
+	font-optical-sizing: auto;
+	@include font-size($font-size-regular);
+	line-height: $line-height-default;
+}
+
+b {
+	font-weight: $font-weight-bold;
+}
+
+small {
+	color: $color-medium;
+	@include font-size($font-size-caption);
+	font-weight: $font-weight-light;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	padding: 0 $spacing-md;
+
+	@include breakpoint(md) {
+		width: 75%;
+	}
+
+	@include breakpoint(lg) {
+		width: 50%;
+	}
+
+	@include breakpoint(xxl) {
+		width: 40%;
+	}
+}
+
+.footer {
+	background-color: $color-light;
+	padding-inline-end: $spacing-md;
+	padding-inline-start: $spacing-md;
+	@include padding-bottom($spacing-lg);
+	@include padding-top($spacing-lg);
+	text-align: center;
+}
+
+a {
+	border-bottom: 1px solid transparent;
+	text-decoration: none;
+
+	&:link,
+	&:visited,
+	&:active {
+		color: $color-medium;
+	}
+
+	&:hover,
+	&:focus {
+		color: $color-dark;
+		font-weight: $font-weight-bold;
+		border-bottom-color: currentColor;
+	}
+}

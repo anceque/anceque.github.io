@@ -1,0 +1,59 @@
+@import './_variables';
+@import './_mixins';
+@import '../../node_modules/rfs/scss';
+
+.item {
+	&:not(:first-of-type) {
+		padding-top: $spacing-lg;
+
+		@include breakpoint(md) {
+			@include padding-top($spacing-lg);
+		}
+	}
+
+	&__subtitle {
+		color: $color-medium;
+		@include font-size($font-size-caption);
+		font-weight: $font-weight-light;
+	}
+
+	&__title {
+		@include font-size($font-size-subtitle);
+		@include padding-bottom($spacing-md);
+		@include padding-top($spacing-md);
+	}
+
+	&__description {
+		line-height: $line-height-large;
+		@include padding-bottom($spacing-md);
+	}
+
+	&__extra {
+		line-height: $line-height-large;
+
+		&:not(:last-of-type) {
+			@include padding-bottom($spacing-sm);
+		}
+	}
+
+	&__list {
+		line-height: $line-height-large;
+		@include padding-top($spacing-sm);
+	}
+
+	&__list--collapsed {
+		@include breakpoint(lg) {
+			display: flex;
+			flex-wrap: wrap;
+
+			li:not(:last-of-type) {
+				&::after {
+					content: '';
+					border-inline-end: 1px solid $color-medium-light;
+					margin-inline-end: $spacing-sm;
+					margin-inline-start: $spacing-sm;
+				}
+			}
+		}
+	}
+}

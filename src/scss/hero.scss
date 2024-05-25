@@ -1,0 +1,18 @@
+@import './_variables';
+@import './_mixins';
+@import '../../node_modules/rfs/scss';
+
+.hero {
+	@include padding-bottom($spacing-xl);
+	@include padding-top($spacing-xl);
+	text-align: center;
+
+	&__title {
+		@include font-size($font-size-accent);
+		font-weight: $font-weight-light;
+	}
+
+	&__subtitle {
+		@include margin-top($spacing-md);
+	}
+}

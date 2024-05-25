@@ -1,0 +1,22 @@
+@import './_variables';
+@import './_mixins';
+@import '../../node_modules/rfs/scss';
+
+.section {
+	@include padding-bottom($spacing-md);
+
+	&:not(:first-of-type) {
+		@include padding-top($spacing-md);
+	}
+
+	&:last-of-type {
+		@include padding-bottom($spacing-xl);
+	}
+
+	&__title {
+		@include font-size($font-size-title);
+		font-weight: $font-weight-light;
+		@include padding-bottom($spacing-md);
+		text-transform: uppercase;
+	}
+}
