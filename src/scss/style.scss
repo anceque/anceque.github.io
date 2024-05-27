@@ -1,8 +1,8 @@
 @import './_variables';
 @import './_mixins';
-@import './section';
-@import './item';
-@import './hero';
+@import './_section';
+@import './_item';
+@import './_hero';
 @import '../../node_modules/rfs/scss';
 
 html {
