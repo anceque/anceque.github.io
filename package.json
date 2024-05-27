@@ -9,8 +9,7 @@
   "scripts": {
     "scss:watch": "sass --watch src/scss:public/css --no-source-map",
     "scss:postcss": "postcss public/css/style.css --use autoprefixer -o public/css/style.css",
-    "start": "yarn scss:watch",
-    "build": "concurrently yarn:scss:*"
+    "start": "concurrently yarn:scss:*"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",

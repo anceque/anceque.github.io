@@ -1,9 +1,9 @@
+@import '../../node_modules/rfs/scss';
 @import './_variables';
 @import './_mixins';
 @import './_section';
 @import './_item';
 @import './_hero';
-@import '../../node_modules/rfs/scss';
 
 html {
 	box-sizing: border-box;
@@ -22,6 +22,7 @@ body {
 	font-family: $font-family-base;
 	font-optical-sizing: auto;
 	@include font-size($font-size-regular);
+	font-weight: $font-weight-regular;
 	line-height: $line-height-default;
 }
 

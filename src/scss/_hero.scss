@@ -1,6 +1,6 @@
+@import '../../node_modules/rfs/scss';
 @import './_variables';
 @import './_mixins';
-@import '../../node_modules/rfs/scss';
 
 .hero {
 	@include padding-bottom($spacing-xl);
