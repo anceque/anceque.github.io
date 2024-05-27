@@ -1,0 +1,86 @@
+@import '../../node_modules/rfs/scss';
+@import './_variables';
+@import './_mixins';
+
+.item {
+	// padding-inline-start: $spacing-lg;
+	position: relative;
+	padding-inline-start: $spacing-lg;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		inset-inline-start:  $spacing-md;
+		border-inline-start: 1px dashed $color-medium-light;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		inset-inline-start:  $spacing-md;
+		border-radius: 50%;
+		width: $font-size-caption;
+		height: $font-size-caption;
+		border: 1px solid $color-medium-light;
+		background-color: $color-white;
+		transform: translate(-50%)
+
+	}
+
+	&:not(:first-of-type) {
+		margin-top: $spacing-lg;
+
+		@include breakpoint(md) {
+			@include margin-top($spacing-lg);
+		}
+	}
+
+	&__subtitle {
+		color: $color-medium;
+		@include font-size($font-size-caption);
+		font-weight: $font-weight-light;
+	}
+
+	&__title {
+		@include font-size($font-size-subtitle);
+		@include padding-bottom($spacing-md);
+		@include padding-top($spacing-md);
+	}
+
+	&__description {
+		line-height: $line-height-large;
+		@include padding-bottom($spacing-md);
+	}
+
+	&__extra {
+		line-height: $line-height-large;
+
+		&:not(:last-of-type) {
+			@include padding-bottom($spacing-sm);
+		}
+	}
+
+	&__list {
+		line-height: $line-height-large;
+		@include padding-top($spacing-sm);
+	}
+
+	&__list--collapsed {
+		@include breakpoint(lg) {
+			display: flex;
+			flex-wrap: wrap;
+
+			li:not(:last-of-type) {
+				&::after {
+					content: '';
+					border-inline-end: 1px solid $color-medium-light;
+					margin-inline-end: $spacing-sm;
+					margin-inline-start: $spacing-sm;
+				}
+			}
+		}
+	}
+}

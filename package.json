@@ -1,0 +1,23 @@
+{
+  "name": "anceque",
+  "private": true,
+  "version": "0.0.1",
+  "description": "personal portfolio",
+  "repository": "git@github.com:anceque/anceque.github.io.git",
+  "author": "Anna Lulakova <anceque@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "scss:watch": "sass --watch src/scss:public/css --no-source-map",
+    "scss:postcss": "postcss public/css/style.css --use autoprefixer -o public/css/style.css",
+    "start": "concurrently yarn:scss:*"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "concurrently": "^8.2.2",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0"
+  },
+  "dependencies": {
+    "rfs": "^10.0.0"
+  }
+}
